@@ -1,10 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+
+{% block content %}
+    <div class="mdl-card mdl-shadow--2dp employer-form" action="#">
+        <div class="mdl-card__title">
+            <h2>Form</h2>
+            <div class="mdl-card__subtitle">Please complete the form</div>
+        </div>
+
+        <div class="mdl-card__supporting-text">
+            <form method="post" class="form">
+                {% csrf_token %}
+                <div class="form__article">
+                    <h3>Personal data</h3>
+
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" name="dominio" type="text" id="firstName"/>
+                            <label class="mdl-textfield__label" for="firstName">Dominio</label>
+                        </div>
+
+                        <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" name="token" id="secondName"/>
+                            <label class="mdl-textfield__label" for="secondName">Token</label>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="form__action">
+
+                    <button id="submit_button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

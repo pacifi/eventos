@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 import requests
 
+from configuracion.models import Acceso, Evento
+from configuracion.views import AccesoUpdateView
+
 
 class IdexTemplateView(TemplateView):
     template_name = 'inscripcion/index.html'
@@ -12,7 +15,14 @@ class InscripcionView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(InscripcionView, self).get_context_data(**kwargs)
-        r = requests.get("http://localhost:9000/payment/112/222/", headers={
-            'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTgyNTA0MTg3LCJqdGkiOiIwZGQ1MDczN2Q2ZmU0ZmM0OTdiMmZhYTkyNGIwN2EzMSIsInVzZXJfaWQiOjF9.W3v1NQp2ctBr9SVXlWI6QdyFiMbqD9AFfl_nSNYzEts'})
+        dni = self.request.GET.get("dni")
+        evento_id = self.request.GET.get("evento")
+
+        evento = Evento.objects.get(id=evento_id)
+
+        acceso = Acceso.objects.filter(estado=True)[0]
+        url = acceso.dominio + acceso.servicio + "/" + dni + "/" + evento.cueenta + "/"
+        r = requests.get(url, headers={
+            'Authorization': "%s %s" % ("Bearer", acceso.token)})
         print(r.json())
         return context

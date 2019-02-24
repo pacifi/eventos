@@ -16,13 +16,14 @@ class Evento(models.Model):
 class Acceso(models.Model):
     token = models.CharField(u"Token", max_length=50)
     dominio = models.URLField()
-    estado = models.BooleanField()
+    servicio = models.CharField(u"Servicio", max_length=50)
+    estado = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = "s"
-        verbose_name_plural = "ss"
+        verbose_name = "Acceso"
+        verbose_name_plural = "Accesos"
 
     def __str__(self):
         return self.token
