@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone ">
+        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-blue"
+           href="{% url 'cofiguracion:acceso_crear' %}">
+            <i class="material-icons">create</i>
+            Crear Acceso
+        </a>
+
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp projects-table">
+            <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">#</th>
+                <th class="mdl-data-table__cell--non-numeric">Dominio</th>
+                <th class="mdl-data-table__cell--non-numeric">Estado</th>
+                <th class="mdl-data-table__cell--non-numeric">Fecha de Registro</th>
+                <th class="mdl-data-table__cell--non-numeric">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for object in object_list %}
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">{{ forloop.counter }}</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <span class="label label--mini background-color--mint">{{ object.dominio }}</span>
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">{{ object.estado }}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{ object.created_at }}</td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a href="{% url 'configuracion:acceso_actualizar' object.id %}"
+                           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored-yellow">
+                            <i class="material-icons">create</i>
+                            Editar
+                        </a>
+                    </td>
+
+                </tr>
+            {% endfor %}
+
+
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}

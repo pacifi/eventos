@@ -23,6 +23,7 @@ from inscripcion.views import IdexTemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inscripcion/', include('inscripcion.urls', namespace='inscripcion')),
+    path('configuracion/', include('configuracion.urls', namespace='configuracion')),
     path('', IdexTemplateView.as_view(), name='index'),
 ]
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
