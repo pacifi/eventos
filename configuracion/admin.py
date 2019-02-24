@@ -1,3 +1,13 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Evento, Acceso
+
+
+@admin.register(Acceso)
+class AccesoAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Evento)
+class EventoAdmin(admin.ModelAdmin):
+    pass

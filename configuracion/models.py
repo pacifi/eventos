@@ -13,8 +13,9 @@ class Evento(models.Model):
         return self.nombre
 
 
-class Acces(models.Model):
+class Acceso(models.Model):
     token = models.CharField(u"Token", max_length=50)
+    dominio = models.URLField()
     estado = models.BooleanField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

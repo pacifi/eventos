@@ -4,5 +4,6 @@ from .views import InscripcionView
 app_name = 'inscripcion'
 urlpatterns = [
 
-    path('formulario', InscripcionView.as_view(), name='formulario')
+    path('formulario', InscripcionView.as_view(), name='formulario'),
+
 ]
