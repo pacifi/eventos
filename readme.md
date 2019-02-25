@@ -35,7 +35,11 @@ Conección a API REST, Registro de Eventos
     $ python manage.py migrate
     $ python manage.py loaddata data.json
     $ python manage.py runserver 8000
+
+
+### Datos de Prueba
     
+
 Visitar la página de Inicio http://localhost:8000
 
 

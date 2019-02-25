@@ -1,9 +1,11 @@
 from django.urls import path, include
-from .views import InscripcionView
+
+from inscripcion.views import EventoDetailView
+from .views import EventoView
 
 app_name = 'inscripcion'
 urlpatterns = [
 
-    path('formulario', InscripcionView.as_view(), name='formulario'),
-
+    path('eventos', EventoView.as_view(), name='eventos'),
+    path('evento/<slug:pk>', EventoDetailView.as_view(), name='formulario'),
 ]
