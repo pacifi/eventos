@@ -1,1 +1,42 @@
 {% extends "base.html" %}
+
+
+
+{% block content %}
+    <div class="mdl-grid ui-cards">
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+            <h3>Eventos</h3>
+        </div>
+
+        {% for evento in eventos %}
+            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--2-col-phone">
+                <div class="mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">{{ evento.nombre }}</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+
+                        {{ evento.descripcion }}
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+
+        </div>
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+
+        </div>
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+
+        </div>
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+
+        </div>
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone">
+
+        </div>
+    </div>
+{% endblock content %}

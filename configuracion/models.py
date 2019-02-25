@@ -3,7 +3,9 @@ from django.db import models
 
 class Evento(models.Model):
     nombre = models.CharField(u"Nombre", max_length=50)
-    cueenta = models.CharField(u"Cuenta", max_length=50)
+    cuenta = models.CharField(u"Cuenta", max_length=50)
+    descripcion = models.TextField(u"Descripción")
+    estado = models.BooleanField()
 
     class Meta:
         verbose_name = "Evento"
@@ -14,8 +16,8 @@ class Evento(models.Model):
 
 
 class Acceso(models.Model):
-    token = models.CharField(u"Token", max_length=50)
-    dominio = models.URLField()
+    token = models.TextField(u"Token")
+    dominio = models.URLField(max_length=150)
     servicio = models.CharField(u"Servicio", max_length=50)
     estado = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)

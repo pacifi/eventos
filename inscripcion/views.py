@@ -15,14 +15,16 @@ class InscripcionView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(InscripcionView, self).get_context_data(**kwargs)
-        dni = self.request.GET.get("dni")
-        evento_id = self.request.GET.get("evento")
+        # dni = self.request.GET.get("dni")
+        # evento_id = self.request.GET.get("evento")
+        #
+        # evento = Evento.objects.get(id=evento_id)
+        #
+        # acceso = Acceso.objects.filter(estado=True)[0]
+        # url = acceso.dominio + acceso.servicio + "/" + dni + "/" + evento.cueenta + "/"
+        # r = requests.get(url, headers={
+        #     'Authorization': "%s %s" % ("Bearer", acceso.token)})
+        # print(r.json())
+        context['eventos'] = Evento.objects.filter(estado=True)
 
-        evento = Evento.objects.get(id=evento_id)
-
-        acceso = Acceso.objects.filter(estado=True)[0]
-        url = acceso.dominio + acceso.servicio + "/" + dni + "/" + evento.cueenta + "/"
-        r = requests.get(url, headers={
-            'Authorization': "%s %s" % ("Bearer", acceso.token)})
-        print(r.json())
         return context

@@ -16,19 +16,23 @@
 
                     <div class="mdl-grid">
                         <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" name="dominio" type="text" id="firstName"/>
-                            <label class="mdl-textfield__label" for="firstName">Dominio</label>
+                            <input class="mdl-textfield__input" name="dominio" type="text" id="dominio_id"/>
+                            {{ form.dominio.errors }}
+                            <label class="mdl-textfield__label" for="dominio_id">Dominio</label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" name="servicio" type="text" id="servicio_id"/>
+                            <label class="mdl-textfield__label" for="servicio_id">Servicio</label>
+                            {{ form.servicio.errors }}
                         </div>
 
-                        <div class="mdl-cell mdl-cell--6-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" name="token" id="secondName"/>
-                            <label class="mdl-textfield__label" for="secondName">Token</label>
+                        <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" name="token" id="token_id"/>
+                            <label class="mdl-textfield__label" for="token_id">Token</label>
+                            {{ form.token.errors }}
                         </div>
                     </div>
-
-
                 </div>
-
                 <div class="form__action">
 
                     <button id="submit_button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">

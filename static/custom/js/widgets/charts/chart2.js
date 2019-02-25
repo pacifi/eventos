@@ -3,22 +3,22 @@
 (function () {
     var container = d3.select('.chart2__container');
     if (container[0][0]) {
-        var colors = ['#7726d3', '#ff5252', '#ffc107', '#00bcd4', '#51a8f9'];
+        var colors = ['#7726d3', '#ff5252', '#ffc107', '#00bcd4', '#51a831'];
 
         var data = [{
-            'key': 'United States',
+            'key': 'Lima',
             'y': 31
         }, {
-            'key': 'Belarus',
+            'key': 'Puno',
             'y': 26
         }, {
-            'key': 'Italy',
+            'key': 'Arequipa',
             'y': 18
         }, {
-            'key': 'France',
+            'key': 'Tacna',
             'y': 15
         }, {
-            'key': 'Other',
+            'key': 'Cusco',
             'y': 10
         }];
 

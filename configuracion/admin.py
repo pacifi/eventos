@@ -10,4 +10,4 @@ class AccesoAdmin(admin.ModelAdmin):
 
 @admin.register(Evento)
 class EventoAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("nombre", "cuenta", "estado")
