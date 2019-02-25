@@ -1,7 +1,7 @@
 # Sistema de Inscripción
 
 
-Sistema para de inscripción para el registro de estudiantes a cursos desarrollado para `desarrolloglobal`
+Sistema de inscripción para el registro de estudiantes a cursos desarrollado para `desarrolloglobal`
 
 ## Proceso de desarrollo.
 
@@ -17,7 +17,7 @@ Conección a API REST, Registro de Eventos
 2. Registro de AccesToken.
 3. Lista de eventos.
 4. Registro incripción.
-5. Validación de pago
+5. Validación de pago via rest
 
 ## Dependencias del sistema.
 
