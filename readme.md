@@ -22,7 +22,6 @@ Conección a API REST, Registro de Eventos
 ## Dependencias del sistema.
 
 1. Python 3
-2. Django 2.0
 
 ## Ejecución
 
