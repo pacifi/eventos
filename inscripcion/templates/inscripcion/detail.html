@@ -24,7 +24,8 @@
 
                 <div class="form__action">
 
-                    <button id="submit_button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                    <button type="submit" id="submit_button"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
                         Validar
                     </button>
                 </div>
@@ -32,19 +33,25 @@
         </div>
     </div>
 
-    <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-        <div class="mdl-card mdl-shadow--2dp line-chart">
-            <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">How to use</h2>
-            </div>
-            <div class="mdl-card__supporting-text">
-                To use colors above for the element, you need to use Sass variable naming as the corresponding color in
-                lowercase with prefix "color-".
-                If the color name is composed of more than one word, the words are separated by a dash "-".<br>
-                <i>Example: You want to use color naming "Light blue". Sass variable for this color is <b>$color-light-blue</b></i>
+
+    {% if pago %}
+        <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+            <div class="mdl-card mdl-shadow--2dp line-chart">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Validación exitosa</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    <ul>
+                        <li><strong>Persona:</strong>{{ pago.person_name }}</li>
+                        <li><strong>Transacción: </strong>{{ pago.number_transaction }}</li>
+                        <li><strong>Detalle de deposito:</strong>{{ pago.institution_name }}</li>
+                    </ul>
+
+                </div>
             </div>
         </div>
-    </div>
+    {% endif %}
+
 
 
 

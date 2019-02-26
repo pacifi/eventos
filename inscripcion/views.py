@@ -37,13 +37,13 @@ class EventoDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(EventoDetailView, self).get_context_data(**kwargs)
         documento = self.request.GET.get("documento")
+        print(documento)
         if documento:
             print(self.get_object())
             acceso = Acceso.objects.filter(estado=True)[0]
             url = acceso.dominio + acceso.servicio + "/" + documento + "/" + self.get_object().cuenta + "/"
             r = requests.get(url, headers={
                 'Authorization': "%s %s" % ("Bearer", acceso.token)})
-            print(r)
-            print(r.json())
-            context['pago'] = r.json()
+            if r:
+                context['pago'] = r.json()[0]
         return context
