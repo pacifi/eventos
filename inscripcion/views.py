@@ -44,6 +44,8 @@ class EventoDetailView(DetailView):
             url = acceso.dominio + acceso.servicio + "/" + documento + "/" + self.get_object().cuenta + "/"
             r = requests.get(url, headers={
                 'Authorization': "%s %s" % ("Bearer", acceso.token)})
-            if r:
+            if r.json():
                 context['pago'] = r.json()[0]
+            else:
+                context['pago'] = None
         return context
