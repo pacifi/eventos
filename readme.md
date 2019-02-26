@@ -38,7 +38,8 @@ Conección a API REST, Registro de Eventos
 
 
 ### Datos de Prueba
-    
+
+![GitHub Logo](/docs/img.png)    
 
 Visitar la página de Inicio http://localhost:8000
 
